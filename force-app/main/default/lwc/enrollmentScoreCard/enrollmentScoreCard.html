@@ -1,0 +1,40 @@
+<template>
+
+    <lightning-card title="Enrollment Score">
+
+        <template if:true={scoreRecord}>
+
+            <div class="slds-p-around_medium">
+
+                <span class={badgeClass}>
+                    {scoreRecord.Score__c}
+                </span>
+
+                <p>
+                    Action:
+                    {scoreRecord.Recommended_Action__c}
+                </p>
+
+                <p>
+                    Source:
+                    {scoreRecord.Source_System__c}
+                </p>
+
+                <p>
+                    Scored At:
+                    {scoreRecord.Scored_At__c}
+                </p>
+
+            </div>
+
+        </template>
+
+        <template if:false={scoreRecord}>
+            <div class="slds-p-around_medium">
+                No enrollment score available yet
+            </div>
+        </template>
+
+    </lightning-card>
+
+</template>
